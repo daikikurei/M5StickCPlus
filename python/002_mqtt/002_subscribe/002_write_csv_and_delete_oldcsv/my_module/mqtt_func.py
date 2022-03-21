@@ -66,11 +66,11 @@ class MqttFunc:
         self.client.loop_forever()
     
     #csv出力用
-    def out_put_csv(self, ):
+    def out_put_csv(self):
         #現在日時を取得
-        dt_now = datetime.datetime.now()
-        csv_file_path = self.csv_folder_path + '/' + 'output_' + dt_now.isoformat() +'.csv'
-
+        YY, MM, DD, HH, MI, SS, MS = self.get_now_time()
+        csv_file_path = self.csv_folder_path + '/' + 'output_' + YY + MM + DD + '_' + HH + '_' + MI + '_' + SS + '_' + MS +'.csv'
+        
         #csv出力
         with open(csv_file_path, 'w') as f:
             for index, item in enumerate(self.sub_data):
@@ -98,6 +98,11 @@ class MqttFunc:
         for i,file in enumerate(filelists):
             if i > self.csv_max_storages - 1:
                 os.remove(file[0])
+    
+    #現在日時を取得
+    def get_now_time(self):
+        dt_now = datetime.datetime.now()
+        return dt_now.strftime("%Y"), dt_now.strftime("%m"), dt_now.strftime("%d"), dt_now.strftime("H"), dt_now.strftime("M"), dt_now.strftime("S"), dt_now.strftime("f")
         
 
             
