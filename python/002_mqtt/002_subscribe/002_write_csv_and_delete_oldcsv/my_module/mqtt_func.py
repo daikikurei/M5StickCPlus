@@ -102,7 +102,7 @@ class MqttFunc:
     #現在日時を取得
     def get_now_time(self):
         dt_now = datetime.datetime.now()
-        return dt_now.strftime("%Y"), dt_now.strftime("%m"), dt_now.strftime("%d"), dt_now.strftime("H"), dt_now.strftime("M"), dt_now.strftime("S"), dt_now.strftime("f")
+        return dt_now.strftime("%Y"), dt_now.strftime("%m"), dt_now.strftime("%d"), dt_now.strftime("%H"), dt_now.strftime("%M"), dt_now.strftime("%S"), dt_now.strftime("%f")
         
 
             
