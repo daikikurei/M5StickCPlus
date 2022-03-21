@@ -1,0 +1,6 @@
+M5StickCPlus用
+MQTTでToFHATデータをwifi経由でPCに送信するプログラム
+
+"/tof_hat"が専用ライブラリなので、
+C:\Users\****\Documents\Arduino\libraries
+に置いてからコンパイルする。

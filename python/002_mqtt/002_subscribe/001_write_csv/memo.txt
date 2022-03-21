@@ -1,0 +1,3 @@
+mqtt通信subscribe用プログラム
+
+N回ごとに1つのcsvファイルにsubscribeしたデータを追加していく。
